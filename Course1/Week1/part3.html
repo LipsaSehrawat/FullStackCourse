@@ -30,6 +30,19 @@
         .label-choices {
             width: auto;
         }
+
+        label:hover { 
+            font-size:40px;
+        }
+
+        input:hover { 
+            font-size:40px;
+        }
+
+        img {
+            height: auto;
+            width: 300px;
+        }
     </style>
 </head>
 
@@ -74,19 +87,19 @@
             <legend>Your Indicators</legend>
             <label class="label-controls" for="height">Height: </label>
             <label class="label-indicators"> Short </label>
-            <input type="range" min="0" max="100" step="5" value="50" name="height">
+            <input class="hover" type="range" min="0" max="100" step="5" value="50" name="height">
             <label class="label-indicators"> Tall </label><br />
             <label class="label-controls" for="salary"> Salary: </label>
             <label class="label-indicators"> Poor </label>
-            <input type="range" min="0" max="100" step="5" value="50" name="salary">
+            <input class="hover" type="range" min="0" max="100" step="5" value="50" name="salary">
             <label class="label-indicators"> Rich </label>
         </fieldset><br>
         <fieldset class="field_set">
             <legend>Your Contact Information</legend>
             <label class="label-controls" for="user-email">Email:</label>
-            <input type="email" required><br />
+            <input class="hover" type="email" required><br />
             <label class="label-controls" for="mobile">Mobile:</label>
-            <input type="tel"><br />
+            <input class="hover" type="tel"><br />
             <label class="label-controls" for="address">Address:</label>
             <textarea id=address name=address rows=3></textarea><br />
             <label class="label-controls" for="method-to-contact">Method to contact you:</label>
@@ -96,6 +109,9 @@
         </fieldset><br>
         <input type="Submit" value="Submit">
     </form>
+
+<script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+
 </body>
 
 </html>
