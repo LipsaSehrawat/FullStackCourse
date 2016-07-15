@@ -1,46 +1,47 @@
 <!DOCTYPE html>
+
 <head>
 	<title>Color Guessing Game!</title>
+
+</head>
+
+<body onload="do_game()">
+
 	<script>
 		var color = ["blue", "cyan", "gold", "gray", "green", "magenta", "orange", "red", "white", "yellow"];
-		var size = color.length;
-		var random_number = Math.random() * (size-1);
-		var finished = false;
-		var target;
-		var guess;
-		var result;
-
-		target = Math.floor(random_number);
 		
+	
+		function get_random_color_index() {
+			var size = color.length;
+			return Math.floor(Math.random() * (size-1));
+		}
+
 		function do_game()
 		{
-			alert("The answer is " + color[target]);
+			var target_color = color[get_random_color_index()];
+			alert("The answer is " + target_color);
+			var finished = false;
 			while(!finished)
 			{
-				result =  prompt("I am thinking of one of these colors: \n \n \n" + color.join(" , ") + "\n \n \n What color am I thinking of?");
-				guess = result.toString();
-			    finished = check_guess();
+				var guess =  prompt("I am thinking of one of these colors: \n \n \n" + color.join(" , ") + "\n \n \n What color am I thinking of?");
+			    finished = check_guess(target_color, guess);
 			}
 			
 		}
 
-		function check_guess()
+		function check_guess(target_color, guess)
 		{
-			if(guess == color[target] )
+			if(guess === target_color)
 			{
 				alert("You are right!");
 				return true;
 			}
-
-			else
-			return false;
+			else {
+				return false;
+			}
 
 		}
 	</script>
-</head>
+</body>
 
- <body onload="do_game()">
-
- </body>
-
- </html>
+</html>
